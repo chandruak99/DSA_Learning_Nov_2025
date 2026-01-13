@@ -30,9 +30,9 @@
 
 
 
-// const strs=["dog","dot","d"];
+const strs=["dog","dot","d"];
 // const strs=["flower","flow","flight"]
-const strs=["dog","racecar","car"]
+// const strs=["dog","racecar","car"]
 
 let prefix=strs[0];
 
@@ -42,7 +42,10 @@ for(let i=1;i<strs.length;i++)
 {
     while(!strs[i].startsWith(prefix))
     {
+
+        console.log("prefix==",prefix.slice(0,-1))
         prefix=prefix.slice(0,-1);
+        
         if(prefix==="")
         {
             return ""

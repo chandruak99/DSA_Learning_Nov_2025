@@ -1,0 +1,35 @@
+const str="abcabcbb";
+
+
+function longestSubstring(str)
+{
+   let left=0;
+   let right=0;
+   let maxLength=0;
+   let set=new Set();
+
+   if(str.length <=1)
+   {
+    return 1;
+   }
+   else
+   {
+     while(right<str.length)
+     {
+        if(set.has(str[right]))
+        {
+           set.delete(str[left])
+           left++;
+        }
+        set.add(str[right]);
+        right++;
+        console.log(set)
+        console.log(right,left)
+        maxLength=Math.max(maxLength,right-left);
+     }
+
+     return maxLength;
+   }
+}
+
+console.log(longestSubstring(str))

@@ -1,7 +1,7 @@
 
 //Two Pair
 const arr=[1,2,3,4,5];
-
+h
 let left=0;
 let right=arr.length-1;
 let target=7;

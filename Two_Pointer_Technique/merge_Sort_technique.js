@@ -2,6 +2,8 @@ const arr=[5,2,9,1,3]
 
 function merge(sortedleft,sortedright)
 {
+
+    console.log("merge",sortedleft,sortedright)
     let left=sortedleft;
     let right=sortedright;
 
