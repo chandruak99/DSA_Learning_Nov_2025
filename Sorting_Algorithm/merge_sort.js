@@ -1,5 +1,5 @@
-// let arr=[1,3,2,5,9];
-let arr=[0,1,2,0,1,2];
+let arr=[1,3,2,5,9];
+// let arr=[0,1,2,0,1,2];
 
 function merge(arr1,arr2)
 {
