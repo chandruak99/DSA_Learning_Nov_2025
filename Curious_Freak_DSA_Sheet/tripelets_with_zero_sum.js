@@ -39,22 +39,58 @@
 
 const arr = [1, 5, 3, 2];
 
-function countTripelet(arr) {
-  arr.sort((a, b) => a - b);
-  let set = new Set(arr);
-  let tripelet = new Set();
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      const sum = arr[i] + arr[j]; // ensure c is distinct and greater than arr[j]
-      if (set.has(sum) && sum > arr[j]) {
-        // normalize triplet order
-        const key = `${arr[i]},${arr[j]},${sum}`;
-        tripelet.add(key);
+// function countTripelet(arr) {
+//   arr.sort((a, b) => a - b); 
+//   let set = new Set(arr);
+//    let triplet = new Set(); 
+//    for (let i = 0; i < arr.length; i++) 
+//     { 
+//       for (let j = i + 1; j < arr.length; j++) 
+//         { 
+//           const sum = arr[i] + arr[j]; 
+//           if (set.has(sum)) 
+//           { 
+//             // normalize triplet order 
+//             const key = `${arr[i]},${arr[j]},${sum}`; 
+//             triplet.add(key); 
+//           } 
+//         } 
+//     } 
+//         return triplet.size
+// }
+
+
+function countTripelet(arr)
+{
+  arr.sort((a,b)=>a-b)
+  let n=arr.length;
+
+  let count=0;
+
+  for(let k=n-1;k>=0;k--)
+  {
+    let c=arr[k];
+    // console.log("c==",c)
+    let i=0;
+    let j=k-1;
+
+    while(i<j)
+    {
+      if((arr[i]+arr[j])===c){
+        count++;
+        i++;
+        j--;
+      }
+      else if((arr[i]+arr[j])<c)
+      {
+        i++;
+      }
+      else
+      {
+        j--;
       }
     }
   }
-
-  return tripelet.size;
+  return count;
 }
 console.log(countTripelet(arr));
