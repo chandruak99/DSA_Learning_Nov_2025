@@ -3,31 +3,28 @@ let count=0;
 function mergeSort(arr){
     let aux=new Array(arr.length);
 
-    sort(arr,aux,0,arr.length-1);
+    sort(arr, aux, 0, arr.length - 1);
     return count;
 }
 
-function sort(arr,aux,left,right)
-{
+function sort(arr, aux, left, right) {
 
     // console.log(left,right)
-    if(left>=right)
-    {
-        return 
+    if (left >= right) {
+        return
     }
-    let mid=Math.floor((left+right)/2);
- 
-    sort(arr,aux,left,mid);
-    sort(arr,aux,mid+1,right);   
-    merge(arr,aux,left,mid,right);
+    let mid = Math.floor((left + right) / 2);
 
-    
+    sort(arr, aux, left, mid);
+    sort(arr, aux, mid + 1, right);
+    merge(arr, aux, left, mid, right);
 
-    
+
+
+
 }
 
-function merge(arr,aux,left,mid,right)
-{
+function merge(arr, aux, left, mid, right) {
 
    
     for(let k=left;k<=right;k++)
@@ -49,25 +46,22 @@ function merge(arr,aux,left,mid,right)
             i++
             k++;
         }
-        else
-        {
-            arr[k]=aux[j];
-            count=count+((mid-i)+1)
+        else {
+            arr[k] = aux[j];
+            count = count + ((mid - i) + 1)
             j++;
             k++;
         }
     }
 
 
-    while(i<=mid)
-    {
-        arr[k]=aux[i];
+    while (i <= mid) {
+        arr[k] = aux[i];
         i++;
         k++;
     }
-    while(j<=right)
-    {
-        arr[k]=aux[j];
+    while (j <= right) {
+        arr[k] = aux[j];
         j++;
         k++;
     }
