@@ -36,39 +36,38 @@
 
 
 function trapOptimized(arr) {
-    let left=0;
-        let right=arr.length-1;
-        let leftMax=0;
-        let rightMax=0;
-        let totalSum=0;
-        
-        while(left<right)
-        {
-            if(arr[left]<arr[right])
-            {
-                
-                if(arr[left]>=leftMax)
-                {
-                    leftMax=arr[left];
-                }
-                totalSum+=leftMax-arr[left];
-                left++;
-                
-            }
-            else
-            {
-                if(arr[right]>=rightMax)
-                {
-                    rightMax=arr[right];
-                }
-                totalSum=rightMax-arr[right];
-                right--;
-            }
-        }
-        return totalSum;
-    }
+    let left = 0;
+    let right = arr.length - 1;
+    let leftMax = 0;
+    let rightMax = 0;
+    let totalSum = 0;
 
-   
+    while (left < right) {
+        console.log("left==", left);
+        console.log("right=", right)
+        if (arr[left] < arr[right]) {
+
+            if (arr[left] >= leftMax) {
+                leftMax = arr[left];
+            }
+            totalSum += leftMax - arr[left];
+            console.log("totalSumLeft", leftMax - arr[left])
+            left++;
+
+        }
+        else {
+            if (arr[right] >= rightMax) {
+                rightMax = arr[right];
+            }
+            totalSum = rightMax - arr[right];
+            console.log("totalSumRight", rightMax - arr[right])
+            right--;
+        }
+    }
+    return totalSum;
+}
+
+
 
 // Example usage:
 console.log(trapOptimized([3, 0, 1, 0, 4, 0, 2])); // Output: 10
