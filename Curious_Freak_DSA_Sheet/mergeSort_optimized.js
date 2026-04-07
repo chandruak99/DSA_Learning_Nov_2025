@@ -1,8 +1,7 @@
-// const arr = [1, 3, 9, 2, 5];
-const arr = [2, 4, 1, 3, 5];
-let count = 0;
-function mergeSort(arr) {
-    let aux = new Array(arr.length);
+const arr=[2, 4, 1, 3, 5];
+let count=0;
+function mergeSort(arr){
+    let aux=new Array(arr.length);
 
     sort(arr, aux, 0, arr.length - 1);
     return count;
@@ -27,24 +26,23 @@ function sort(arr, aux, left, right) {
 
 function merge(arr, aux, left, mid, right) {
 
-    console.log("count==", count)
-    console.log("arr==", arr)
-    console.log("mid", mid);
-    console.log(arr.slice(left, mid + 1));
-    console.log(arr.slice(mid + 1, right + 1))
-
-    for (let k = left; k <= right; k++) {
-        aux[k] = arr[k];
+   
+    for(let k=left;k<=right;k++)
+    { 
+        aux[k]=arr[k];
     }
 
-    let i = left;
-    let j = mid + 1;
-    let k = left;
-
-
-    while (i <= mid && j <= right) {
-        if (aux[i] <= aux[j]) {
-            arr[k] = aux[i];
+    let i=left;
+    let j=mid+1;
+    let k=left;
+    console.log(aux.slice(left,mid+1));
+    console.log(aux.slice(mid+1,right+1))
+    // console.log("count",count)
+    while(i<=mid && j <=right)
+    {
+        if(aux[i]<=aux[j])
+        {
+            arr[k]=aux[i];
             i++
             k++;
         }
@@ -67,8 +65,8 @@ function merge(arr, aux, left, mid, right) {
         j++;
         k++;
     }
-
-
+    console.log("count",count)
+    
 }
 
 console.log(mergeSort(arr))
