@@ -1,0 +1,10 @@
+let str = "chandru";
+let charArr = str.split("")
+console.log(charArr)
+let n = str.length;
+for (let i = 0; i < str.length / 2; i++) {
+    [charArr[i], charArr[n - 1 - i]] = [charArr[n - 1 - i], charArr[i]];
+}
+// str[1] = 'z'
+
+console.log(charArr.join(""));
