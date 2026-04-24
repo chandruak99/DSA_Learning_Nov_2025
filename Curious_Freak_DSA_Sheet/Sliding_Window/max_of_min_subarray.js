@@ -26,7 +26,7 @@ function maxMinSubArray(arr) {
         stack.push(i);
     }
 
-    console.log("left==", left);
+    // console.log("left==", left);
 
     stack = [];
 
@@ -35,17 +35,15 @@ function maxMinSubArray(arr) {
             stack.pop();
         }
 
-        console.log("right stack==", stack, i)
+        // console.log("right stack==", stack, i)
 
         if (stack.length > 0) {
             right[i] = stack[stack.length - 1];
         }
 
         stack.push(i)
-        console.log("after stack--", stack)
     }
 
-    console.log("right==", right)
     let result = new Array(n + 1).fill(0);
 
 
@@ -55,7 +53,7 @@ function maxMinSubArray(arr) {
         result[windowSize] = Math.max(result[windowSize], arr[i]);
     }
 
-    console.log("result==", result)
+    // console.log("result==", result)
 
     for (let i = n - 1; i >= 1; i--) {
         result[i] = Math.max(result[i], result[i + 1])
