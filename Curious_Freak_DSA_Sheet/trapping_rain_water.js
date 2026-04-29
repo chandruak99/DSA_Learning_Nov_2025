@@ -50,6 +50,7 @@ function trapOptimized(arr) {
             if (arr[left] >= leftMax) {
                 leftMax = arr[left];
             }
+            console.log("leftMax==", leftMax)
             totalSum += leftMax - arr[left];
             console.log("totalSumLeft", leftMax - arr[left])
             left++;
