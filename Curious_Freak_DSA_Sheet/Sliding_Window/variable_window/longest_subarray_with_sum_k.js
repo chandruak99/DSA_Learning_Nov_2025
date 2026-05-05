@@ -7,8 +7,13 @@
 // const arr=[-5,8,-14,2,4,12];
 // const k=-5;
 
-const arr=[10,-10,20,30];
-const k=5;
+// const arr=[10,-10,20,30];
+// const k=5;
+
+// const arr=[4,2,-3,1,6];
+// const k=0;
+const arr=[4,2,0,1,6];
+const k=0;
 
 // const arr=[10,-10,20,30];
 // const k=5;
@@ -87,6 +92,8 @@ function longestSubarray(arr,k)
    for(let i=0;i<arr.length;i++)
    {
           currentSum+=arr[i];
+
+          console.log("currentSum==",currentSum)
 
           if(currentSum===k)
           {
