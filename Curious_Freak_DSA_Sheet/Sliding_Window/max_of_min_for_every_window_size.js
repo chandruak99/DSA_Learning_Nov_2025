@@ -67,10 +67,13 @@ function maxOfMin(arr, n) {
         while (stack.length > 0 && arr[stack[stack.length - 1]] >= arr[i]) {
             stack.pop();
         }
+        
         if (stack.length > 0) {
             left[i] = stack[stack.length - 1];
         }
+       
         stack.push(i);
+        console.log("stack==",stack);
     }
     console.log("stack after left==",stack);
 
@@ -85,10 +88,12 @@ function maxOfMin(arr, n) {
         while (stack.length > 0 && arr[stack[stack.length - 1]] >= arr[i]) {
             stack.pop();
         }
+        console.log("after right pop",stack)
         if (stack.length > 0) {
             right[i] = stack[stack.length - 1];
         }
         stack.push(i);
+
     }
 
     console.log("right==",right)
@@ -115,7 +120,7 @@ function maxOfMin(arr, n) {
     return ans.slice(1);
 }
 
-// Dry Run Input
+// // Dry Run Input
 const input = [10, 20, 30, 50, 10, 70, 30];
 console.log(maxOfMin(input, input.length)); 
 // Output: [70, 30, 20, 10, 10, 10, 10]
