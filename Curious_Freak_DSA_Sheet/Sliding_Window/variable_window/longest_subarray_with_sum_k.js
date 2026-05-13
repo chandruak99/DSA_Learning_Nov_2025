@@ -1,5 +1,5 @@
-// const arr=[10,5,2,7,1,-10];
-// const k=15;
+const arr=[10,5,2,7,1,-10];
+const k=15;
 
 
 // const arr=[-5, 8, -14, 2, 4, 12];
@@ -12,8 +12,8 @@
 
 // const arr=[4,2,-3,1,6];
 // const k=0;
-const arr=[4,2,0,1,6];
-const k=0;
+// const arr=[4,2,0,1,6];
+// const k=0;
 
 // const arr=[10,-10,20,30];
 // const k=5;
@@ -111,8 +111,38 @@ function longestSubarray(arr,k)
           {
              prefix.set(currentSum,i);
           }
+
+          console.log("prefix==",prefix)
    }
 
    return maxSum === -Infinity ?0 :maxSum;
 }
 console.log(longestSubarray(arr,k))
+
+
+let maxLength=-Infinity;
+         let prefix=new Map();
+         let currentSum=0;
+         for(let i=0;i<arr.length;i++)
+         {
+              currentSum+=arr[i];
+              
+              if(currentSum===k)
+              {
+                  maxLength=Math.max(maxLength,i+1);
+              }
+              
+              let previous=currentSum-k;
+              if(prefix.has(previous))
+              {
+                  maxLength=Math.max(maxLength,i-prefix.get(previous));
+              }
+              
+              if(!prefix.has(previous))
+              {
+                  prefix.set(currentSum,i);
+              }
+         }
+         
+         
+         return maxLength===-Infinity ? 0 : maxLength;
