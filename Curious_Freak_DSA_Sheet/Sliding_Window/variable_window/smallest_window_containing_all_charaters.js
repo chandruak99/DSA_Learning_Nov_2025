@@ -3,9 +3,10 @@
 // const s="zoomlazapzo";
 // const p="oza"
 
-const s="lkllkmlmmmkmk";
-const p="llmmk";
-
+// const s="lkllkmlmmmkmk";
+// const p="llmmk";
+const s="zoom";
+const p="zooe";
 
 function smallestWindow(s,p)
 {
@@ -32,7 +33,7 @@ function smallestWindow(s,p)
       }
    }
 
-   // console.log("required==",required)
+   console.log("required==",required)
 
    for(let right=0;right<s.length;right++)
    {
