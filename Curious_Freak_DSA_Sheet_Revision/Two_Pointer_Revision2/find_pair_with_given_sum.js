@@ -47,6 +47,7 @@ function findPairSum(arr,target)
       {
         return true;
       }
+      set.add(arr[i])
    }
    return false;
 }
