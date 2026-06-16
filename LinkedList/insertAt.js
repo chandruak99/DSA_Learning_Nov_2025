@@ -44,6 +44,9 @@ class LinkedList{
     }
 
 
+    
+
+
     prepend(data)
     {
         
