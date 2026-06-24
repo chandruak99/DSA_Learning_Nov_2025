@@ -39,7 +39,7 @@ class LinkedList{
         newNode.next=current;
         if(previous)
         {
-            previous.next=newNode;
+        previous.next=newNode;
         }
     }
 
