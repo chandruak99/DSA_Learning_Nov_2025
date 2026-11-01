@@ -1,6 +1,9 @@
-const arr=[1,2,2,3];
+// const arr=[1,2,2,3];
 
-const target=2;
+// const target=2;
+
+const arr=[0,1];
+const target=1;
 
 
 function lowerBound(arr,target)
